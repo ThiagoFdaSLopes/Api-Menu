@@ -1,6 +1,6 @@
 import 'dotenv/config';
 import App from './app';
-import connectToDatabase from './Models/Connection';
+import connectToDatabase from '../Database/Connection';
 
 class Server {
   private readonly PORT: number | string;
