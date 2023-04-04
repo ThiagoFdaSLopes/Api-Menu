@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  api-menu:
+    container_name: api-menu
+    build: .
+    restart: always
+    volumes: 
+      - ./src:/app/src
+    depends_on:
+      - mongodb
+    ports:
+      - 3001:3001
+    environment:
+      - MONGO_URI=mongodb://mongodb:27017/ApiMenu
+  mongodb:
+    container_name: api_menu_db
+    image: mongo:5.0.7
+    restart: always
+    ports:
+      - 27017:27017
