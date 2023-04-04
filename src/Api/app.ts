@@ -1,4 +1,5 @@
 import express from 'express';
+import ErrorHandler from './Middlewares/ErrorHandle';
 
 class App {
   public express: express.Application;
@@ -12,6 +13,7 @@ class App {
 
   private middleware(): void {
     this.express.use(express.json());
+    this.express.use(ErrorHandler.handle);
   }
 
   // private routes(): void {
