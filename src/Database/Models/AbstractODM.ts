@@ -21,6 +21,10 @@ abstract class AbstractODM<T> {
     return this.model.find();
   }
 
+  public async findByOne(user: T): Promise<T | null> {
+    return this.model.findOne({ user });
+  }
+
   public async updateProduct(id: string, obj: UpdateQuery<T>): Promise<T | null> {
     const product = await this.model.findByIdAndUpdate(id, obj, { new: true });
     return product;
