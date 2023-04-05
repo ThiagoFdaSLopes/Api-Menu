@@ -1,0 +1,42 @@
+[
+  {
+    "parent": null,
+    "name": "Pizza"
+  },
+  {
+    "parent": null,
+    "name": "Hamburguer"
+  },
+  {
+    "parent": null,
+    "name": "Comida Chinesa"
+  },
+  {
+    "parent": null,
+    "name": "Comida Japonesa"
+  },
+  {
+    "parent": null,
+    "name": "Comida Mexicana"
+  },
+  {
+    "parent": null,
+    "name": "Comida Árabe"
+  },
+  {
+    "parent": null,
+    "name": "Comida Brasileira"
+  },
+  {
+    "parent": null,
+    "name": "Sobremesas"
+  },
+  {
+    "parent": null,
+    "name": "Café da Manhã"
+  },
+  {
+    "parent": null,
+    "name": "Bebidas"
+  }
+]
