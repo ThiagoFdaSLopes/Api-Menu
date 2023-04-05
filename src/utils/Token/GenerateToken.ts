@@ -1,6 +1,6 @@
 import jwt, { SignOptions } from 'jsonwebtoken';
 import fs from 'fs';
-import { IUserLogin } from '../../Api/Interfaces/IUserLogin';
+import IUserLogin from '../../Api/Interfaces/IUserLogin';
 
 export const createToken = (body: IUserLogin) => {
   const configToken: SignOptions = {
