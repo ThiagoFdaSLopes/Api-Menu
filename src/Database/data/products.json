@@ -1,0 +1,62 @@
+[  
+  {    
+    "categories": ["pizza"],
+    "name": "Pizza Calabresa",
+    "qty": 20,
+    "price": 7.25
+  },
+  {
+    "categories": ["hamburguer"],
+    "name": "Hamburguer Cheddar",
+    "qty": 30,
+    "price": 12.50
+  },
+  {
+    "categories": ["sobremesa"],
+    "name": "Bolo de Chocolate",
+    "qty": 15,
+    "price": 8.75
+  },
+  {
+    "categories": ["bebida", "suco", "laranja"],
+    "name": "Suco de Laranja",
+    "qty": 50,
+    "price": 3.50
+  },
+  {
+    "categories": ["salada", "verde"],
+    "name": "Salada Verde",
+    "qty": 10,
+    "price": 5.25
+  },
+  {
+    "categories": ["sanduiche", "peru"],
+    "name": "Sanduiche de Peru",
+    "qty": 25,
+    "price": 9.00
+  },
+  {
+    "categories": ["sobremesa", "sorvete", "baunilha"],
+    "name": "Sorvete de Baunilha",
+    "qty": 12,
+    "price": 6.75
+  },
+  {
+    "categories": ["bebida", "refrigerante", "cola"],
+    "name": "Refrigerante de Cola",
+    "qty": 40,
+    "price": 4.25
+  },
+  {
+    "categories": ["pizza", "marguerita"],
+    "name": "Pizza Marguerita",
+    "qty": 18,
+    "price": 8.50
+  },
+  {
+    "categories": ["hamburguer", "frango"],
+    "name": "Hamburguer de Frango",
+    "qty": 22,
+    "price": 11.25
+  }
+]
