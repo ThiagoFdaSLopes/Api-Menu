@@ -7,6 +7,7 @@ function authMiddleware(req: Request, res: Response, next: NextFunction) {
   try {
     const decodedToken = jwt.verify(authorization, 'secret-key');
     if (!decodedToken) return res.status(401).json({ message: 'Invalid token' });
+    req.body.userInfo = decodedToken;
     next();
   } catch (error) {
     return res.status(403).json({ message: 'Token not found' });
