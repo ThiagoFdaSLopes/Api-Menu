@@ -17,8 +17,7 @@ class UserService {
       const UserLogin = { email: user.email, password: pass };
       const result = await this._modelODM.findByOne(UserLogin);
       if (!result) throw new ClassError('Email ou senha incorretos', 404);
-      const { email, password, id } = result;
-      const token = createToken({ email, password, id });
+      const token = createToken(result);
       return token;
     } catch (error) {
       if (error instanceof ClassError) {

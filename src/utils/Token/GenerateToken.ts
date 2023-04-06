@@ -7,8 +7,9 @@ export const createToken = (body: IUserLogin) => {
     algorithm: 'HS256',
     expiresIn: '1d',
   };
+  const payload = { id: body.id, email: body.email, role: body.role, password: body.password };
   const secret = fs.readFileSync(`${__dirname}/jwt.key`, { encoding: 'utf-8' });
-  return jwt.sign(body, secret, configToken);
+  return jwt.sign(payload, secret, configToken);
 };
 
 export default createToken;
