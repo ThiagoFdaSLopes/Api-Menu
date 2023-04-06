@@ -93,6 +93,16 @@ Para fazer login e receber um token de adm use os seguintes dados:
 }
 ```
 
+#### Fazer Login
+```http
+  POST /auth/login
+```
+
+| Parâmetro   | Tipo       | Descrição                           |
+| :---------- | :--------- | :---------------------------------- |
+| `email` | `string` | **Obrigatório no body**. |
+| `password` | `string` | **Obrigatório no body**. |
+
 #### Criar um product
 ```http
   POST /product
