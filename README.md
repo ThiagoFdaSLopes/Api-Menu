@@ -70,7 +70,7 @@ Foram encontradas 2 possíveis soluções para este problema:
 ```
 
 ```
- Sera validade se existe um token no headers e se o usuario e um admin.
+ Sera validado se existe um token no headers e se o usuário é um admin.
 ```
 
 | Parâmetro   | Tipo       | Descrição                           |
@@ -87,7 +87,7 @@ Foram encontradas 2 possíveis soluções para este problema:
 ```
 
 ```
- Sera validade se existe um token no headers e se o usuario e um admin.
+ Sera validado se existe um token no headers e se o usuário é um admin.
 ```
 
 | Parâmetro   | Tipo       | Descrição                                   |
@@ -99,6 +99,10 @@ Foram encontradas 2 possíveis soluções para este problema:
 
 #### Buscar product por ID
 
+```
+ Sera validado se existe um token no headers e se o usuário é um admin.
+```
+
 ```http
   GET /products/:id <--(Precisa ser um id mongoID valido)
   ```
@@ -107,13 +111,34 @@ Foram encontradas 2 possíveis soluções para este problema:
 | `id`      | `string` | **Obrigatório no params da rota**.  |
 
 
+#### Deletando product por ID
+
+```
+ Sera validado se existe um token no headers e se o usuário é um admin.
+```
+
+```http
+  GET /products/:id <--(Precisa ser um id mongoID valido)
+  ```
+| Parâmetro   | Tipo       | Descrição                                   |
+| :---------- | :--------- | :------------------------------------------ |
+| `id`      | `string` | **Obrigatório no params da rota**.  |
+
 #### Pegar todos products da loja
+
+```
+ Sera validado se existe um token no headers e se o usuário é um admin.
+```
 
 ```http
   GET /products
   ```
   
  #### Pegar todas categorias da loja
+
+```
+ Sera validado se existe um token no headers e se o usuário é um admin.
+```
 
 ```http
   GET /categorys
