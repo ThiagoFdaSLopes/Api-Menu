@@ -1,6 +1,7 @@
 import { Request, Response, Router, NextFunction } from 'express';
 import ProductController from '../Controllers/ProductController';
 import authMiddleware from '../Middlewares/AuthToken';
+import ValidateBodyProduct from '../Middlewares/ValidateBodyProduct';
 
 const productController = new ProductController();
 
@@ -8,6 +9,7 @@ const productRoutes = Router();
 
 productRoutes.post(
   '/',
+  ValidateBodyProduct,
   authMiddleware,
   (
     req: Request, 
