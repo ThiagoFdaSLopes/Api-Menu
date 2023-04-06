@@ -6,6 +6,24 @@ Para este projeto, foi desenvolvido uma api para aplicar os princípios de Progr
 
 - Back-end: Typescript, Node, Moongose, MongoDB, Docker, Express
 - Testes: Jest, Mocha, Sinon
+- Validadores: MD5, Joi
+
+Razão da escolha das Tecnologias/Frameworks/Bibliotecas usadas:
+- Typescript: TypeScript é uma linguagem de programação de código aberto que é uma extensão do JavaScript. Ele adiciona recursos avançados de tipagem estática, permitindo que os desenvolvedores detectem erros e falhas de digitação em tempo de compilação, em vez de descobri-los em tempo de execução.
+- Typescript garante, maior produtividade, maior escalabilidade, compatibilidade com javascript e muitas comunidades ativas.
+
+- Moongose: O Mongoose é uma biblioteca do Node.js que fornece uma camada de abstração sobre o MongoDB, permitindo que os desenvolvedores trabalhem com o banco de dados de forma mais fácil e intuitiva.
+- Moongose garante, validação de dados, acessibilidade, flexibilidade.
+
+- Docker: O Docker é uma plataforma de software que permite a criação, distribuição e execução de aplicativos em contêineres virtualizados.
+- Docker garante que a aplicação rode em uma máquina sem precisar da instalação direta de dependências(softwares) externas que pertencem à aplicação, garantindo o uso correto das versões do sistema utilizados.
+
+- Joi: O Joi é uma biblioteca de validação de objetos para o Node.js
+- Joi permite valida coes robustas, mensagens de erros personalizadas, validação de tipo de dados. Comumente usado com Hapi e o moongose.
+
+- Jest: Para garantir a funcionalidade da API, utilizei o jest por ser fácil de configurar, recursos avançados, velocidade, e suporte a várias linguagens.
+
+- Sinon: Biblioteca de testes que permite a criação de mocks, simulações, facilidade de uso, compatibilidade com jest e mocha.
 
 ## Rodando o Docker
 Rode os serviços node e mongodb com o comando ```docker-compose up -d```.
