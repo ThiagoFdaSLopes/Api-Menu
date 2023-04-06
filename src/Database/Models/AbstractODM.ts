@@ -1,4 +1,4 @@
-import { Model, Schema, UpdateQuery, model, models } from 'mongoose';
+import { Model, Schema, UpdateQuery, model, models, FilterQuery } from 'mongoose';
 
 abstract class AbstractODM<T> {
   readonly model: Model<T>;
@@ -21,8 +21,9 @@ abstract class AbstractODM<T> {
     return this.model.find();
   }
 
-  public async findByOne(user: T): Promise<T | null> {
-    return this.model.findOne({ user });
+  public async findByOne(user: FilterQuery<T> | undefined): Promise<T | null> {
+    const result = this.model.findOne(user);
+    return result || null;
   }
 
   public async updateProduct(id: string, obj: UpdateQuery<T>): Promise<T | null> {
