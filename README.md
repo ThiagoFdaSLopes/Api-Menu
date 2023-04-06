@@ -4,8 +4,8 @@ Para este projeto, foi desenvolvido uma api para aplicar os princípios de Progr
 
 ## Stack utilizada 
 
-Back-end: Typescript, Node, Moongose, MongoDB, Docker, Express
-Testes: Jest, Mocha, Sinon
+- Back-end: Typescript, Node, Moongose, MongoDB, Docker, Express
+- Testes: Jest, Mocha, Sinon
 
 ## Rodando o Docker
 Rode os serviços node e mongodb com o comando ```docker-compose up -d```.
