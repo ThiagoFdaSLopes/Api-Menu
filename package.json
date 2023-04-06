@@ -7,7 +7,7 @@
     "dev": "tsnd src/index.ts",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "test": "jest -i --verbose",
-    "db:populate": "docker exec api_menu_db mongoimport -d ApiMenu -c users --file /tmp/users.json --jsonArray; docker exec api_menu_db mongoimport -d ApiMenu -c categories --file /tmp/categorys.json --jsonArray; docker exec api_menu_db mongoimport -d ApiMenu -c products --file /tmp/products.json --jsonArray"
+    "db:populate": "docker exec api_menu_db mongoimport -d ApiMenu -c users --file /tmp/users.json --jsonArray && docker exec api_menu_db mongoimport -d ApiMenu -c categories --file /tmp/categorys.json --jsonArray && docker exec api_menu_db mongoimport -d ApiMenu -c products --file /tmp/products.json --jsonArray"
   },
   "devDependencies": {
     "@istanbuljs/nyc-config-typescript": "1.0.2",
@@ -44,7 +44,9 @@
     "util": "0.12.4"
   },
   "dependencies": {
+    "@types/joi": "^17.2.3",
     "express": "4.17.1",
+    "joi": "^17.9.1",
     "jsonwebtoken": "^9.0.0",
     "md5": "^2.3.0",
     "mongoose": "6.1.8"
