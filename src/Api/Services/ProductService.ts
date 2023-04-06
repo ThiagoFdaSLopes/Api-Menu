@@ -24,7 +24,7 @@ class ProductService {
 
   public async getProductById(id: string): Promise<IProducts | null> {
     try {
-      if (!isValidObjectId(id)) throw new ClassError('Invalid Object id', 422);
+      if (!isValidObjectId(id)) throw new ClassError('Invalid Object identification', 422);
       const result = await this._modelODM.findById(id);
       if (!result) throw new ClassError('Product Id Not Found', 404);
       return result;
@@ -47,6 +47,28 @@ class ProductService {
         throw new ClassError(`${(error as Error).message}`, error.status);
       }
       throw new ClassError('Erro interno', 500);
+    }
+  }
+
+  public async createProduct(body: IProducts): Promise<IProducts> {
+    try {
+      const result = await this._modelODM.create(body);
+      return result;
+    } catch (error) {
+      throw new ClassError((error as Error).message, 500);
+    }
+  }
+
+  public async updateProduct(body: IProducts, id: string): Promise<IProducts | null> {
+    try {
+      if (!isValidObjectId(id)) throw new ClassError('Invalid Object id', 422);
+      const result = await this._modelODM.updateProduct(id, body);
+      return result;
+    } catch (error) {
+      if (error instanceof ClassError) {
+        throw new ClassError(`${(error as Error).message}`, error.status);
+      }
+      throw new ClassError((error as Error).message, 500);
     }
   }
 }

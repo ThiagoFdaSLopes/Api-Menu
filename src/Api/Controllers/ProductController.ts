@@ -4,7 +4,7 @@ import ProductService from '../Services/ProductService';
 import IProducts from '../Interfaces/IProducts';
 
 class ProductController {
-  constructor(private productController = new ProductService(new ProductODM())) {}
+  constructor(private productService = new ProductService(new ProductODM())) {}
 
   public async GetAllProducts(
     _req: Request, 
@@ -12,7 +12,7 @@ class ProductController {
     next: NextFunction,
   ): Promise<Response | undefined> {
     try {
-      const result: IProducts[] = await this.productController.getAllProducts();
+      const result: IProducts[] = await this.productService.getAllProducts();
       return res.status(200).json(result);
     } catch (error) {
       next(error);
@@ -26,7 +26,7 @@ class ProductController {
   ): Promise<Response | undefined> {
     const { id } = req.params;
     try {
-      const result = await this.productController.getProductById(id);
+      const result = await this.productService.getProductById(id);
       return res.status(200).json(result);
     } catch (error) {
       next(error);
@@ -40,7 +40,34 @@ class ProductController {
   ): Promise<Response | undefined> {
     const { id } = req.params;
     try {
-      const result = await this.productController.deleteProduct(id);
+      const result = await this.productService.deleteProduct(id);
+      return res.status(202).json({ deleted: result });
+    } catch (error) {
+      next(error);
+    }
+  }
+
+  public async CreateProduct(
+    req: Request, 
+    res: Response, 
+    next: NextFunction,
+  ): Promise<Response | undefined> {
+    try {
+      const result: IProducts = await this.productService.createProduct(req.body);
+      return res.status(201).json(result);
+    } catch (error) {
+      next(error);
+    }
+  }
+
+  public async Update(
+    req: Request, 
+    res: Response, 
+    next: NextFunction,
+  ): Promise<Response | undefined> {
+    const { id } = req.params;
+    try {
+      const result = await this.productService.updateProduct(req.body, id);
       return res.status(200).json(result);
     } catch (error) {
       next(error);

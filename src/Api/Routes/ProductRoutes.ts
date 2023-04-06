@@ -6,6 +6,26 @@ const productController = new ProductController();
 
 const productRoutes = Router();
 
+productRoutes.post(
+  '/',
+  authMiddleware,
+  (
+    req: Request, 
+    res: Response, 
+    next: NextFunction,
+  ) => productController.CreateProduct(req, res, next),
+);
+
+productRoutes.patch(
+  '/:id',
+  authMiddleware,
+  (
+    req: Request, 
+    res: Response, 
+    next: NextFunction,
+  ) => productController.Update(req, res, next),
+);
+
 productRoutes.get(
   '/',
   authMiddleware,
