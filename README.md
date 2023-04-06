@@ -5,6 +5,7 @@ Para este projeto, foi desenvolvido uma api para aplicar os princípios de Progr
 ## Stack utilizada 
 
 Back-end: Typescript, Node, Moongose, MongoDB, Docker, Express
+Testes: Jest, Mocha, Sinon
 
 ## Rodando o Docker
 Rode os serviços node e mongodb com o comando ```docker-compose up -d```.
@@ -17,6 +18,7 @@ Lembre-se de parar o mongodb se estiver usando localmente na porta padrão (2701
 
 
 Esses serviços irão inicializar um container chamado ```api-menu``` e outro chamado ```api_menu_db```. 
+Tambem existe um servico mongo-express que pode ser usado atraves de um navegador de internet na rota ```http://localhost:8081```
 
 A partir daqui você pode rodar o container ```api-menu``` via CLI ou abri-lo no VS Code. 
 
