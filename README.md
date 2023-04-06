@@ -82,6 +82,17 @@ Foram encontradas 2 possíveis soluções para este problema:
 
 # Rotas Da Api
 
+### Login
+
+Para fazer login e receber um token de adm use os seguintes dados:
+
+```json
+{
+  "email": "adm@email.com",
+  "password": "--adm@2023!!--"
+}
+```
+
 #### Criar um product
 ```http
   POST /product
