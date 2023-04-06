@@ -118,7 +118,7 @@ Foram encontradas 2 possíveis soluções para este problema:
 ```
 
 ```http
-  GET /products/:id <--(Precisa ser um id mongoID valido)
+  DELETE /products/:id <--(Precisa ser um id mongoID valido)
   ```
 | Parâmetro   | Tipo       | Descrição                                   |
 | :---------- | :--------- | :------------------------------------------ |
