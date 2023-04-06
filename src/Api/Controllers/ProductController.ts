@@ -2,6 +2,7 @@ import { NextFunction, Request, Response } from 'express';
 import ProductODM from '../../Database/Models/ProductODM';
 import ProductService from '../Services/ProductService';
 import IProducts from '../Interfaces/IProducts';
+import ClassError from '../../utils/Error/ClassError';
 
 class ProductController {
   constructor(private productService = new ProductService(new ProductODM())) {}
@@ -52,7 +53,9 @@ class ProductController {
     res: Response, 
     next: NextFunction,
   ): Promise<Response | undefined> {
+    const { userInfo } = req.body;
     try {
+      if (userInfo.role !== 'admin') throw new ClassError('User not admin', 404);
       const result: IProducts = await this.productService.createProduct(req.body);
       return res.status(201).json(result);
     } catch (error) {
@@ -66,7 +69,9 @@ class ProductController {
     next: NextFunction,
   ): Promise<Response | undefined> {
     const { id } = req.params;
+    const { userInfo } = req.body;
     try {
+      if (userInfo.role !== 'admin') throw new ClassError('User not admin', 404);
       const result = await this.productService.updateProduct(req.body, id);
       return res.status(200).json(result);
     } catch (error) {
