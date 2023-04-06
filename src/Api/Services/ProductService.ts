@@ -15,7 +15,10 @@ class ProductService {
       const result = await this._modelODM.findAll();
       return result;
     } catch (error) {
-      throw new ClassError(`${(error as Error).message}`, 500);
+      if (error instanceof ClassError) {
+        throw new ClassError(`${(error as Error).message}`, error.status);
+      }
+      throw new ClassError('Erro interno do servidor', 500);
     }
   }
 
@@ -26,7 +29,10 @@ class ProductService {
       if (!result) throw new ClassError('Product Id Not Found', 404);
       return result;
     } catch (error) {
-      throw new ClassError(`${(error as Error).message}`, 500);
+      if (error instanceof ClassError) {
+        throw new ClassError(`${(error as Error).message}`, error.status);
+      }
+      throw new ClassError('Erro interno do servidor', 500);
     }
   }
 
@@ -37,7 +43,10 @@ class ProductService {
       if (!result) throw new ClassError('Product Id Not Found', 404);
       return result;
     } catch (error) {
-      throw new ClassError(`${(error as Error).message}`, 500);
+      if (error instanceof ClassError) {
+        throw new ClassError(`${(error as Error).message}`, error.status);
+      }
+      throw new ClassError('Erro interno', 500);
     }
   }
 }

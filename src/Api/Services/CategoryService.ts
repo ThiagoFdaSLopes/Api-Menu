@@ -15,7 +15,10 @@ class CategoryService {
       if (!result) throw new ClassError('Categorys error', 500);
       return result;
     } catch (error) {
-      throw new ClassError(`${(error as Error).message}`, 500);
+      if (error instanceof ClassError) {
+        throw new ClassError(`${(error as Error).message}`, error.status);
+      }
+      throw new ClassError('Erro interno do servidor', 500);
     }
   }
 }

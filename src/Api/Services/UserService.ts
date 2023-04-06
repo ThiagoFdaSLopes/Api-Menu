@@ -11,7 +11,7 @@ class UserService {
     this._modelODM = modelODM;
   }
 
-  public async login(user: IUserLogin): Promise<string> {
+  public async login(user: IUserLogin): Promise<string | undefined> {
     try {
       const pass = md5(user.password);
       const UserLogin = { email: user.email, password: pass };
@@ -21,7 +21,10 @@ class UserService {
       const token = createToken({ email, password, id });
       return token;
     } catch (error) {
-      throw new ClassError(`${(error as Error).message}`, 500);
+      if (error instanceof ClassError) {
+        throw new ClassError(`${(error as Error).message}`, error.status);
+      }
+      throw new ClassError('Erro interno do servidor', 500);
     }
   }
 }
