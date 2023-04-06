@@ -8,7 +8,8 @@
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "test": "jest -i --verbose",
     "test:mocha": "mocha -r ts-node/register tests/**/**/*.test.ts --exit -t 60000",
-    "test:coverage": "nyc mocha -r ts-node/register tests/**/**/*.test.ts --exit -t 60000"
+    "test:coverage": "nyc mocha -r ts-node/register tests/**/**/*.test.ts --exit -t 60000",
+    "db:populate": "docker exec api_menu_db mongoimport -d ApiMenu -c users --file /tmp/users.json --jsonArray; docker exec api_menu_db mongoimport -d ApiMenu -c categories --file /tmp/categorys.json --jsonArray; docker exec api_menu_db mongoimport -d ApiMenu -c products --file /tmp/products.json --jsonArray"
   },
   "devDependencies": {
     "@istanbuljs/nyc-config-typescript": "1.0.2",
