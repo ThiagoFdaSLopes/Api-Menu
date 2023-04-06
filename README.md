@@ -9,7 +9,11 @@ Back-end: Typescript, Node, Moongose, MongoDB, Docker, Express
 ## Rodando o Docker
 Rode os serviços node e mongodb com o comando ```docker-compose up -d```.
 
-Lembre-se de parar o mongodb se estiver usando localmente na porta padrão (27017), ou adapte, caso queria fazer uso da aplicação em containers. 
+Lembre-se de parar o mongodb se estiver usando localmente na porta padrão (27017), ou adapte, caso queria fazer uso da aplicação em containers.
+
+:warning: Após rodar o docker! Use o comando ```npm run db:populate``` na raiz do projeto. Para o bando de dados ser populado com informações iniciais!
+
+:warning: Após subir todos os contêineres, a api já estará rodando na porta 3001, portanto basta apenas usar os endpoints
 
 
 Esses serviços irão inicializar um container chamado ```api-menu``` e outro chamado ```api_menu_db```. 
