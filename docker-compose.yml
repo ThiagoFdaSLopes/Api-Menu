@@ -13,11 +13,29 @@ services:
       - 3001:3001
     environment:
       - MONGO_URI=mongodb://mongodb:27017/ApiMenu
+    networks:
+      - api-menu-network
   mongodb:
     container_name: api_menu_db
     image: mongo:5.0.7
     restart: always
     ports:
       - 27017:27017
+    networks:
+      - api-menu-network
+  mongo-express:
+    container_name: mongo-express
+    image: mongo-express
+    restart: always
+    ports:
+      - 8081:8081
+    environment:
+      - ME_CONFIG_MONGODB_SERVER=mongodb
+      - ME_CONFIG_MONGODB_PORT=27017
+    networks:
+      - api-menu-network
+networks:
+  api-menu-network:
+    driver: bridge
 
     
